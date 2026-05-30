@@ -1,6 +1,6 @@
 import Section from "../../Layout/Section/Section";
 // import Card from "../../molicules/Card/Card";
-import {motion} from 'motion/react'
+import {motion, Variants} from 'motion/react'
 import {useState} from 'react'
 
 export default function Contacts() {
@@ -15,7 +15,7 @@ export default function Contacts() {
   ];
 
   // typing container configuration
-  const typingContainer = {
+  const typingContainer:Variants = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
@@ -28,7 +28,7 @@ export default function Contacts() {
   };
 
   // animation for each letter
-  const typingLetter = {
+  const typingLetter:Variants = {
     hidden: { opacity: 0, display: "none" },
     visible: { 
       opacity: 1, 

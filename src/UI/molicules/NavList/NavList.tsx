@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import type { NavListProps } from './navlist.types'
 import NavItem from '../../atoms/NavItem/NavItem'
 
-export default function NavList({ listItems, className = '', icon, active }: NavListProps) {
+export default function NavList({ listItems, className = '', active }: NavListProps) {
 
   return (
     <motion.nav
