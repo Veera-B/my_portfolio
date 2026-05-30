@@ -45,7 +45,7 @@ jobs:
             - name: 3.1 Trigger Render Container via webhook
               run: |
                 echo "Intiating connection to Render Cloud Service ..."
-                response = $(curl -s -o /dev/null -w "%{http_code}" "${{secrets.RENDER_DEPLOY_HOOK }}")
+                response=$(curl -s -o /dev/null -w "%{http_code}" "${{secrets.RENDER_DEPLOY_HOOK }}")
                 if ["$response" -eq 200]||["$response" -eq 201]; then
                     echo "SUCCESS: Render has accepted containerized build request."
                 else
