@@ -6,7 +6,7 @@ on:
 jobs:
     validate-and-test:
         name: Validation and Linting test
-        runs-on : ubunt-latest
+        runs-on : ubuntu-latest
         steps:
             - name: 1.1 Fetching repogitory code
               uses: actions/checkout@v4
