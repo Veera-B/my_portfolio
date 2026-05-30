@@ -46,7 +46,7 @@ jobs:
               run: |
                 echo "Intiating connection to Render Cloud Service ..."
                 response=$(curl -s -o /dev/null -w "%{http_code}" "${{secrets.RENDER_DEPLOY_HOOK }}")
-                if ["$response" -eq 200]||["$response" -eq 201]; then
+                if [ "$response" -eq 200 ] || [ "$response" -eq 201 ] || [ "$response" -eq 202 ]; then
                     echo "SUCCESS: Render has accepted containerized build request."
                 else
                     echo "FAILED: Webhook trigger failed with status code $response" 
