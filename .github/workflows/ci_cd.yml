@@ -35,7 +35,7 @@ jobs:
             - name: 2.2 Mocking Docker build to check errors
               run: |
                 echo "Starting Docker Build stage...."
-                docker build -t portfolio-preview:latest
+                docker build -t portfolio-preview:latest .
                 echo "Docker Image successfully validated"
     deploy-to-render:
         name: Stage-3 Triggering Cloud Deployment
