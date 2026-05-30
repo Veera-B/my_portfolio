@@ -1,0 +1,57 @@
+name: CI CD Portfilio Pipeline
+on:
+    push: 
+        branches: ['main']
+
+jobs:
+    validate-and-test:
+        name: Validation and Linting test
+        runs-on : ubunt-latest
+        steps:
+            - name: 1.1 Fetching repogitory code
+              uses: actions/checkout@v4
+
+            - name: 1.2 Settingup Node environment
+              uses: actions/setup-node@v4
+              with: 
+                node-version: 20
+                cache: npm
+
+
+            - name: 1.3 Installing Dependencies
+              run: npm ci
+
+            - name: 1.4 Running code compilation test
+              run: npm run build --if-preset
+
+    docker-build-check:
+        name: Stage-2 Docker Container pre-build check
+        needs: validate-and-test
+        runs-on: ubuntu-latest
+        steps:
+            - name: 2.1 Fetching repogitory code
+              uses: actions/checkout@v4
+
+            - name: 2.2 Mocking Docker build to check errors
+              run: |
+                echo "Starting Docker Build stage...."
+                docker build -t portfolio-preview:latest
+                echo "Docker Image successfully validated"
+    deploy-to-render:
+        name: Stage-3 Triggering Cloud Deployment
+        needs: docker-build-check
+        runs-on: ubuntu-latest
+        steps:
+            - name: 3.1 Trigger Render Container via webhook
+              run: |
+                echo "Intiating connection to Render Cloud Service ..."
+                response = $(curl -s -o /dev/null -w "%{http_code}" "${{secrets.RENDER_DEPLOY_HOOK }}")
+                if ["$response" -eq 200]||["$response" -eq 201]; then
+                    echo "SUCCESS: Render has accepted containerized build request."
+                else
+                    echo "FAILED: Webhook trigger failed with status code $response" 
+                    exit 1
+                fi
+
+
+             
