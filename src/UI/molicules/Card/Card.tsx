@@ -4,7 +4,7 @@ import Heading from '../../atoms/Heading/Heading'
 import SubHeading from '../../atoms/SubHeading/SubHeading'
 import SmokyProgressBar from '../../atoms/SmokyLine/SmokyLine'
 
-export default function Card({ children, className = '',description='',list_items=[],title='' ,sub_title=''}: CardProps) {
+export default function Card({ children, className = '',description='',title='' ,sub_title=''}: CardProps) {
     return (
         <motion.div 
             
@@ -52,6 +52,7 @@ export default function Card({ children, className = '',description='',list_item
               }
               { sub_title!==''&& <SubHeading title={sub_title}/>}
                 {children}
+                {description!==''&&<p>{description}</p>}
             </div>
         </motion.div>
     )

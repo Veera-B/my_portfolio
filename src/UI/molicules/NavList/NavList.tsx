@@ -50,7 +50,7 @@ export default function NavList({ listItems, className = '', active }: NavListPr
                             }}
                             className={`w-full p-2 transition-all ${isActvie?'border-r-2 border-fuchsia-600  rounded-r-sm shadow-fuchsia-100':""}`}
                         >
-                            <NavItem href={item.href??"#"} icon={icon} active={isActvie} label={item.label} />
+                            <NavItem href={item.href??"#"}  active={isActvie} label={item.label} />
                         </motion.li>
                      })
                      }

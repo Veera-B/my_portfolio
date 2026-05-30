@@ -1,6 +1,7 @@
 import Section from "../../Layout/Section/Section";
 // import Card from "../../molicules/Card/Card";
-import {motion, Variants} from 'motion/react'
+import {motion} from 'motion/react'
+import type {Variants} from 'motion/react'
 import {useState} from 'react'
 
 export default function Contacts() {
