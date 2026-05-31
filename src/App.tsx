@@ -5,8 +5,9 @@ import Hero from './UI/organisms/HeroSection/HeroSection'
 import Skills from './UI/organisms/Skills/Skills'
 import Projects from './UI/organisms/Projects/Projects'
 import Architectures from './UI/organisms/Architectures/Architectures'
-import Contacts from './UI/organisms/Contacts/Contacts'
+
 import useDarkMode from './hooks/useDarkMode'
+import NewContact from './UI/organisms/Contacts/NewContact'
 
 function App() {
    const {theme,toggleTheme} = useDarkMode()
@@ -20,7 +21,7 @@ function App() {
       <Skills />
       <Projects />
       <Architectures />
-      <Contacts />
+      <NewContact />
      </Layout>
       <button 
                 onClick={toggleTheme}

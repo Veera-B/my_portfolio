@@ -1,4 +1,4 @@
-import {motion} from 'motion/react'
+import { motion } from "motion/react";
 export default function FlowingWaves() {
   // 🌟 వేవ్స్ పూర్తి ఎత్తు (0 నుండి 100 వరకూ) కవర్ అయ్యేలా Paths ని మార్చాము
   const wavePaths = [
@@ -17,24 +17,27 @@ export default function FlowingWaves() {
     "M -10 345 Q 88 66, 77 81 T 128 42 T 215 21",
     "M -10 560 Q 66 45, 89 81 T 128 42 T 215 21",
     "M -10 170 Q 44 32, 55 81 T 128 42 T 215 21",
-    
   ];
 
   return (
-    
     <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
       <svg
         className="w-full h-full opacity-40"
         viewBox="0 0 100 100"
-       
-        preserveAspectRatio="none" 
+        preserveAspectRatio="none"
         fill="none"
       >
         <defs>
-          <linearGradient id="waveGradient" x1="0%" y1="100%" x2="100%" y2="56%">
-            <stop offset="0%" stopColor="#10b581" />   {/* Emerald Green */}
-            <stop offset="40%" stopColor="#FF61F8" />  {/* Cyan / Teal */}
-            <stop offset="75%" stopColor="#831C91" />  {/* Yellow */}
+          <linearGradient
+            id="waveGradient"
+            x1="0%"
+            y1="100%"
+            x2="100%"
+            y2="56%"
+          >
+            <stop offset="0%" stopColor="#10b581" /> {/* Emerald Green */}
+            <stop offset="40%" stopColor="#FF61F8" /> {/* Cyan / Teal */}
+            <stop offset="75%" stopColor="#831C91" /> {/* Yellow */}
             <stop offset="100%" stopColor="#DE1A58" /> {/* Orange */}
           </linearGradient>
         </defs>
@@ -44,17 +47,10 @@ export default function FlowingWaves() {
             key={index}
             d={path}
             stroke="url(#waveGradient)"
-          
-            strokeWidth="0.2" 
+            strokeWidth="0.2"
             opacity={1 - index * 0.15}
             animate={{
-              d: [
-                path,
-                path.replace("70", "85").replace("30", "15"),
-              
-                path,
-                
-              ],
+              d: [path, path.replace("70", "85").replace("30", "15"), path],
             }}
             transition={{
               duration: 10 + index * 2,
@@ -64,7 +60,6 @@ export default function FlowingWaves() {
           />
         ))}
 
-      
         {[...Array(4)].map((_, i) => (
           <motion.path
             key={`sub-${i}`}

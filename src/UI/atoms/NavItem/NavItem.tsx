@@ -1,13 +1,17 @@
-import {motion} from 'motion/react'
-import type { NavItemProps } from './navitems.types';
+import { motion } from "motion/react";
+import type { NavItemProps } from "./navitems.types";
 
-
-export default function NavItem({href,label,active,className,icon}:NavItemProps){
-  
-    return(
-        <motion.a
-            id={label}
-            className={`
+export default function NavItem({
+  href,
+  label,
+  active,
+  className,
+  icon,
+}: NavItemProps) {
+  return (
+    <motion.a
+      id={label}
+      className={`
                 flex
                 items-center
                 gap-2
@@ -18,22 +22,21 @@ export default function NavItem({href,label,active,className,icon}:NavItemProps)
                 whitespace-nowrap
                 
                 /** mobile */
-                text-xs 
+                text-sm
                 md:text-sm
                 transition-colors
                 ${
-                    active 
-                    ? "text-fuchsia-600" 
+                  active
+                    ? "text-fuchsia-600"
                     : "text-slate-500 hover:text-slate-900 bg-transparent"
-                
                 }
                 ${className}
                 `}
-            href={href}
-            whileHover={{x: typeof window !== 'undefined'&& window.innerWidth < 768 ? 0 : 5}}
-        >
-            {icon&&icon}
-            {label}
-        </motion.a>
-    )
+      href={href}
+      whileHover={{ x: 5 }}
+    >
+      {icon && icon}
+      {label}
+    </motion.a>
+  );
 }

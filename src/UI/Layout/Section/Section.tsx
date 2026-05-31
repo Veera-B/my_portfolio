@@ -1,8 +1,13 @@
-import { motion } from 'framer-motion'
-import type { SectionProps } from './section.types'
+import { motion } from "framer-motion";
+import type { SectionProps } from "./section.types";
 
-export default function Section({ id, title, subtitle, children, className = '' }: SectionProps) {
-
+export default function Section({
+  id,
+  title,
+  subtitle,
+  children,
+  className = "",
+}: SectionProps) {
   return (
     <motion.section
       id={id}
@@ -14,11 +19,11 @@ export default function Section({ id, title, subtitle, children, className = '' 
       className={`
         relative 
         w-full 
-       /** min-h-screen */ 
+     
         flex 
         flex-col 
         justify-center 
-        py-16 
+        py-4
         px-4 
         sm:px-6 
         md:px-12 
@@ -35,9 +40,9 @@ export default function Section({ id, title, subtitle, children, className = '' 
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-[150px] pointer-events-none" />
 
       {/* section header part */}
-      <div className="relative z-10 mb-12 flex flex-col items-start">
+      <div className="relative z-10 mb-3 flex flex-col items-start">
         {/* section title part */}
-        <motion.h5 
+        <motion.h5
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -59,22 +64,22 @@ export default function Section({ id, title, subtitle, children, className = '' 
         </motion.h5>
 
         {/* Glowing Line under the title */}
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "80px" }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="h-0.75 bg-linear-to-r from-cyan-400 to-purple-500 rounded-full mt-3 shadow-[0_0_12px_rgba(34,211,238,0.5)]"
+          className="h-0.75 bg-linear-to-r from-cyan-400 via-purple-500 to-pink-700 rounded-full mt-3 shadow-[0_0_12px_rgba(34,211,238,0.5)]"
         />
 
         {/* show when sub title available */}
-        {subtitle && (
-          <motion.p 
+        {subtitle !== "" && (
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-3 text-slate-400 text-sm sm:text-base font-1xl leading-relaxed"
+            className="mt-1 text-slate-400 text-sm sm:text-base font-1xl leading-relaxed"
           >
             {subtitle}
           </motion.p>
@@ -82,15 +87,15 @@ export default function Section({ id, title, subtitle, children, className = '' 
       </div>
 
       {/* main content of the section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="relative z-10 w-full flex-1 flex flex-col justify-start"
+        className="relative z-10 w-full flex-1 flex flex-col justify-start mt-7"
       >
         {children}
       </motion.div>
     </motion.section>
-  )
+  );
 }
