@@ -28,7 +28,7 @@ export default function Card({
       className={`
                 relative
                 rounded-2xl        
-                px-6 py-8 
+                px-12 py-16 
                 gap-6
                 /* hover on rich glow */
                 hover:border

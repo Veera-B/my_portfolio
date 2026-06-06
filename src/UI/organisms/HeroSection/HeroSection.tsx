@@ -8,7 +8,9 @@ export default function Hero() {
       <Section
         id="about"
         title="Who Am I?"
-        subtitle="Senior Software Engineer"
+        subtitle="Veera Bashipangu |
+Senior Full Stack Developer
+React · FastAPI · AI Integration | Building scalable micro-frontends, microservices, and AI-powered applications"
 
         // className="relative rounded-1xl overflow-hidden shadow-3xl"
       >
@@ -26,7 +28,7 @@ export default function Hero() {
               <li className="mb-2.5 leading-relaxed sm:items-center sm:justify-items-center">
                 {" "}
                 <span className="gap-6 font-bold  border-b mb-5 border-fuchsia-500">
-                  🚀 Frontend Development (4 Years):
+                   Frontend Development (4 Years):
                 </span>{" "}
                 Extensive experience building responsive applications with React
                 and Redux, recently adopting Tailwind CSS for modern UI. Backed
@@ -38,7 +40,7 @@ export default function Hero() {
               <li className="mb-2.5 leading-relaxed ">
                 {" "}
                 <span className="gap-6 font-bold  border-b mb-5 border-fuchsia-500">
-                  ⚙️ Backend & Architecture (1 Year):
+                   Backend & Architecture (1 Year):
                 </span>{" "}
                 Crafting clean, versioned REST APIs using Python (FastAPI &
                 Flask) with secure JWT authentication and microservices design.
@@ -46,7 +48,7 @@ export default function Hero() {
               <li className="mb-2.5 leading-relaxed">
                 {" "}
                 <span className="gap-6 font-bold  border-b mb-5 border-fuchsia-500">
-                  📦 Modern DevOps & Tooling:{" "}
+                   Modern DevOps & Tooling:{" "}
                 </span>
                 Streamlining development workflows using Docker
                 containerization, Nx Monorepos, and the ultra-fast UV package
@@ -55,7 +57,7 @@ export default function Hero() {
               <li className="mb-2.5 leading-relaxed">
                 {" "}
                 <span className="gap-6 font-bold  border-b mb-5 border-fuchsia-500">
-                  🤖 Future-Forward:{" "}
+                   Future-Forward:{" "}
                 </span>
                 Actively integrating Generative AI capabilities, recently
                 architecting innovative Text-to-Voice microservices.
