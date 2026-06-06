@@ -46,6 +46,10 @@ const skills: Record<string, string[]>[] = [
   },
   {
     "AI-Integration": [
+      "LangChain",
+      "LlamaIndex",
+      "ChromaDB (vector DB)",
+      "Implemented RAG (Retrieval-Augmented Generation)",
       " Edge‑TTS library",
       "Text‑to‑Voice microservice design",
       "REST API integration for AI services",

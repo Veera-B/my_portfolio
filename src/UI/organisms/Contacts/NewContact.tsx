@@ -8,7 +8,7 @@ export default function NewContact() {
   return (
     <Section
       id="contacts"
-      title="Get In Tuch"
+      title="Get In TOUCH"
       className="py-25 flex flex-col items-center justify-center mt-7"
     >
       <Card className="">
